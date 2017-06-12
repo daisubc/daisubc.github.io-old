@@ -23,6 +23,32 @@
   transform: scale(1.15);
 }
 
+#alumni {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* or space-around */
+  text-align: left;
+}
+
+#alumni a {
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(50% - 4px);
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (min-width: 50em) {
+  #alumni a {
+    width: calc(25% - 6px);
+  }
+}
+
+#alumni a:hover img {
+  transform: scale(1.15);
+}
+
+
 figure {
   margin: 0;
   overflow: hidden;
