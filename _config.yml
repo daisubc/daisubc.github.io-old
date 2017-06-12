@@ -1,11 +1,12 @@
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
-name: DAIS Lab | Bhushan Gopaluni
+name: DAIS Lab
 email: Bhushan.Gopaluni [at] ubc.ca
 description: > # this means to ignore newlines until "url:"
   We develop and apply machine learning and data analytics techniques with a particular interest in process industries.
 footer_text: >
+  Bhushan Gopaluni. 
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 
