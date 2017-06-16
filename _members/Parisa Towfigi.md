@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Kai Wong
-description: Kai Wong
+title: Parisa Towfigi
+description: Parisa Towfigi
 img: /assets/img/members/blank.png
-program: PhD
-status: Current
-year_end: 
-year_start: 2017
+program: MASc
+status: Alumni
+year_end: 2011
+year_start: 2009
 ---
 
 <img class="profile_img" src="{{ page.img | prepend: site.baseurl | prepend: site.url }}" alt=""/>

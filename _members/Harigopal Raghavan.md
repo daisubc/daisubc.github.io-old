@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Kai Wong
-description: Kai Wong
+title: Harigopal Raghavan
+description: Harigopal Raghavan
 img: /assets/img/members/blank.png
-program: PhD
-status: Current
-year_end: 
-year_start: 2017
+program: RA
+status: Alumni
+year_end: 2008
+year_start: 2007
 ---
 
 <img class="profile_img" src="{{ page.img | prepend: site.baseurl | prepend: site.url }}" alt=""/>

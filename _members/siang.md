@@ -5,6 +5,8 @@ description: Siang completed a BASc in Chemical Engineering (Minor in Computer S
 img: /assets/img/members/siang.png
 program: BASc
 status: Current
+year_end: 
+year_start: 2017
 ---
 
 <img class="profile_img" src="{{ page.img | prepend: site.baseurl | prepend: site.url }}" alt=""/>

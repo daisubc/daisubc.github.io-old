@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Lee Rippon
-description: Lee Rippon
-img: /assets/img/members/lee.png
+title: Mahsa Sadeghassadi
+description: Mahsa Sadeghassadi
+img: /assets/img/members/blank.png
 program: PhD
-status: Current
-year_end:
+status: Alumni
+year_end: 2016
 year_start: 2016
 ---
 

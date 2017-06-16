@@ -21,7 +21,8 @@ description: Current students and alumni.
         <figure>
             <img src="{{ member.img | prepend: site.baseurl | prepend: site.url }}">
             <figcaption>    
-            <b> {{ member.title }} </b> | {{ member.program }}
+            <b> {{ member.title }} </b>
+            <p><small>{{ member.program }} | since {{ member.year_start }} </small></p>
             </figcaption>
         </figure>
     </a>
@@ -33,8 +34,11 @@ description: Current students and alumni.
 <h1>Alumni</h1>
 <h3>
 <a class="btn fil-cat-alumni" data-rel="All">All</a> |
+<a class="btn fil-cat-alumni" data-rel="RA">RA</a> | 
+<a class="btn fil-cat-alumni" data-rel="PDF">PDF</a> | 
 <a class="btn fil-cat-alumni" data-rel="PhD">PhD</a> | 
 <a class="btn fil-cat-alumni" data-rel="MASc">MASc</a> |
+<a class="btn fil-cat-alumni" data-rel="MEng">MEng</a> |
 <a class="btn fil-cat-alumni" data-rel="BASc">BASc</a>
 </h3>
 <hr>
@@ -46,7 +50,8 @@ description: Current students and alumni.
         <figure>
             <img src="{{ member.img | prepend: site.baseurl | prepend: site.url }}">
             <figcaption>    
-            <b> {{ member.title }} </b> | {{ member.program }}
+            <b> {{ member.title }} </b>
+            <p><small>{{ member.program }} | {{ member.year_start }} - {{ member.year_end }} </small></p>
             </figcaption>
         </figure>
     </a>

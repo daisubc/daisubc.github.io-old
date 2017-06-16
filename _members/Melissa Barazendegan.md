@@ -5,6 +5,8 @@ description: Melissa Barazandegan has bachelors and masters degrees from Sharif 
 img: /assets/img/members/photoVisa_Melissa.jpg
 program: PhD
 status: Alumni
+year_end: 2016
+year_start: 2011
 ---
 
 <img class="profile_img" src="{{ page.img | prepend: site.baseurl | prepend: site.url }}" alt=""/>

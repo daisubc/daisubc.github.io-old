@@ -1,0 +1,15 @@
+---
+layout: page
+title: Norman Siu
+description: Norman Siu
+img: /assets/img/members/blank.png
+program: BASc
+program_type: Undergraduate Thesis
+status: Alumni
+year_end: 2012
+year_start: 2012
+---
+
+<img class="profile_img" src="{{ page.img | prepend: site.baseurl | prepend: site.url }}" alt=""/>
+
+<h3> {{ page.program_type }} </h3>

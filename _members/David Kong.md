@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Lee Rippon
-description: Lee Rippon
-img: /assets/img/members/lee.png
-program: PhD
+title: David Kong
+description: David Kong
+img: /assets/img/members/blank.png
+program: MSc
 status: Current
-year_end:
+year_end: 
 year_start: 2016
 ---
 

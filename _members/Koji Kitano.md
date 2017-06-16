@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Lee Rippon
-description: Lee Rippon
-img: /assets/img/members/lee.png
-program: PhD
-status: Current
-year_end:
+title: Koji Kitano
+description: Koji Kitano
+img: /assets/img/members/blank.png
+program: MASc
+status: Alumni
+year_end: 2017
 year_start: 2016
 ---
 

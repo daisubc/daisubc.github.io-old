@@ -5,6 +5,8 @@ description: Qiugang Lu is a university Gold medalist from Harbin Institute of T
 img: /assets/img/members/QiugangLu.png
 program: PhD
 status: Current
+year_end: 
+year_start: 2013
 ---
 
 <img class="profile_img" src="{{ page.img | prepend: site.baseurl | prepend: site.url }}" alt=""/>

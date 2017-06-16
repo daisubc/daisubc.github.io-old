@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Kai Wong
-description: Kai Wong
+title: Kenneth McClure
+description: Kenneth McClure
 img: /assets/img/members/blank.png
-program: PhD
-status: Current
-year_end: 
-year_start: 2017
+program: MASc
+status: Alumni
+year_end: 2013
+year_start: 2011
 ---
 
 <img class="profile_img" src="{{ page.img | prepend: site.baseurl | prepend: site.url }}" alt=""/>

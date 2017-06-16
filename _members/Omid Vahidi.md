@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Lee Rippon
-description: Lee Rippon
-img: /assets/img/members/lee.png
+title: Omid Vahidi
+description: Omid Vahidi
+img: /assets/img/members/blank.png
 program: PhD
-status: Current
-year_end:
-year_start: 2016
+status: Alumni
+year_end: 2013
+year_start: 2009
 ---
 
 <img class="profile_img" src="{{ page.img | prepend: site.baseurl | prepend: site.url }}" alt=""/>
