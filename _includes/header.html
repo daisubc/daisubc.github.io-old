@@ -12,16 +12,20 @@
       <div class="trigger">
         <!-- About -->
         <a class="page-link" href="{{ site.baseurl | prepend: site.url }}/">Home</a>
-
-        <!-- Blog -->
-        <!-- <a class="page-link" href="{{ '/blog/' | prepend: site.baseurl | prepend: site.url }}">blog</a> -->
+        <a class="page-link" href="{{ '/research/' | prepend: site.baseurl | prepend: site.url }}">Research</a>
+        <a class="page-link" href="{{ '/members/' | prepend: site.baseurl | prepend: site.url }}">Members</a>
+        <a class="page-link" href="{{ '/publications/' | prepend: site.baseurl | prepend: site.url }}">Publications</a>
+        <a class="page-link" href="{{ '/teaching/' | prepend: site.baseurl | prepend: site.url }}">Teaching</a>
 
         <!-- Pages -->
-        {% for page in site.pages %}
+<!--         {% for page in site.pages %}
           {% if page.title and page.url != "/" %}
             <a class="page-link" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">{{ page.title | capitalize }}</a>
           {% endif %}
-        {% endfor %}
+        {% endfor %} -->
+
+        <!-- Blog -->
+        <a class="page-link" href="{{ '/blog/' | prepend: site.baseurl | prepend: site.url }}">Blog</a>
 
         <!-- CV link -->
         <!-- <a class="page-link" href="{{ '/assets/pdf/CV.pdf' | prepend: site.baseurl | prepend: site.url }}">vitae</a> -->

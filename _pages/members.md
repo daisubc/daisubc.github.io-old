@@ -6,12 +6,12 @@ description: Current students and alumni.
 ---
 <link rel="stylesheet" href="{{ '/assets/css/members.css' | prepend: site.baseurl | prepend: site.url }}">
 
-<div class="toolbar">
-  <button class="btn fil-cat" href="" data-rel="All">All</button>
-  <button class="btn fil-cat" data-rel="PhD">PhD</button>
-  <button class="btn fil-cat" data-rel="MASc">MASc</button>
-  <button class="btn fil-cat" data-rel="BASc">BASc</button>
-</div> 
+<h3>
+<a class="btn fil-cat" data-rel="All">All</a> |
+<a class="btn fil-cat" data-rel="PhD">PhD</a> | 
+<a class="btn fil-cat" data-rel="MASc">MASc</a> |
+<a class="btn fil-cat" data-rel="BASc">BASc</a>
+</h3>
 
 <hr>
 <div id="members">
@@ -31,12 +31,12 @@ description: Current students and alumni.
 
 <br>
 <h1>Alumni</h1>
-<div class="toolbar">
-  <button class="btn fil-cat-alumni" href="" data-rel="All">All</button>
-  <button class="btn fil-cat-alumni" data-rel="PhD">PhD</button>
-  <button class="btn fil-cat-alumni" data-rel="MASc">MASc</button>
-  <button class="btn fil-cat-alumni" data-rel="BASc">BASc</button>
-</div> 
+<h3>
+<a class="btn fil-cat-alumni" data-rel="All">All</a> |
+<a class="btn fil-cat-alumni" data-rel="PhD">PhD</a> | 
+<a class="btn fil-cat-alumni" data-rel="MASc">MASc</a> |
+<a class="btn fil-cat-alumni" data-rel="BASc">BASc</a>
+</h3>
 <hr>
 
 <div id="alumni">
