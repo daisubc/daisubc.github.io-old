@@ -15,3 +15,16 @@ function collapseNavbar() {
         x.className = "topnav";
     }
 }
+
+$(function() {
+    var selectedClass = "";
+    $(".fil-cat-pub").click(function(){ 
+    selectedClass = $(this).attr("data-rel"); 
+    $("#pub").fadeTo(100, 0.1);
+    $("#pub > div").not("."+selectedClass).fadeOut().removeClass('scale-anm');
+    setTimeout(function() {
+      $("."+selectedClass).fadeIn().addClass('scale-anm');
+      $("#pub").fadeTo(300, 1);
+    }, 300);
+    });
+});
