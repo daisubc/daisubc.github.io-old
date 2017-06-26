@@ -36,7 +36,7 @@
     <span class="periodical">
     
     {% if entry.year %}
-      {{entry.year}}
+      {{entry.year.}}
     {% endif %}
     
     {% if entry.type == "article" %}
@@ -50,11 +50,11 @@
     {% endif %}
     
      {% if entry.number %}
-      {({entry.number}),}
+      {{entry.number}}
     {% endif %}
     
       {% if entry.pages %}
-      {({entry.pages}).}
+      {{entry.pages}}
     {% endif %}
     
     </span>
