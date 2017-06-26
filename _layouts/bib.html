@@ -56,7 +56,7 @@
     [<i href="{{ entry.html }}" target="_blank">HTML</i>]
   {% endif %}
   {% if entry.pdf %}
-    [<i href="{{ entry.pdf | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</i>]
+    [<a href="{{ entry.pdf | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>]
   {% endif %}
   {% if entry.presentation %}
     [<i href="{{ entry.supp | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Presentation</i>]
