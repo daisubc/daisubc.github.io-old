@@ -1,7 +1,7 @@
 ---
 layout: about
 permalink: /
-title: <strong>Data Analytics and Intelligent Systems</strong> Lab, UBC
+title: <strong>Data Analytics and Intelligent Systems</strong> Lab
 description: Paving the way for the next industrial revolution through data
 
 profile:
