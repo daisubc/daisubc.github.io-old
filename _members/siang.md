@@ -9,6 +9,9 @@ year_end:
 year_start: 2017
 ---
 
+Siang completed a BASc in Chemical Engineering (Minor in Computer Science) from UBC. He is working on a Summer 2017 NSERC USRA project on machine learning and process control.
+
+
 <img class="profile_img" src="{{ page.img | prepend: site.baseurl | prepend: site.url }}" alt=""/>
 <hr>
 <p> Email: siang [at] alumni.ubc.ca </p>
