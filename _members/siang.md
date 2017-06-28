@@ -1,13 +1,16 @@
 ---
 layout: page
 title: Siang Lim
-description: Siang completed a BASc in Chemical Engineering (Minor in Computer Science) from UBC. He is working on a Summer 2017 NSERC USRA project on machine learning and process control.
+description: NSERC USRA Research Student
 img: /assets/img/members/siang.png
 program: BASc
 status: Current
 year_end: 
 year_start: 2017
 ---
+
+Siang completed a BASc in Chemical Engineering (Minor in Computer Science) from UBC. He is working on a Summer 2017 NSERC USRA project on machine learning and process control.
+
 
 <img class="profile_img" src="{{ page.img | prepend: site.baseurl | prepend: site.url }}" alt=""/>
 <hr>

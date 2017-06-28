@@ -34,14 +34,31 @@
     </span>
 
     <span class="periodical">
-    {% if entry.type == "article" %}
-      <em>{{entry.journal}}</em>
-    {% elsif entry.type == "inproceedings" %}
-      <em>In {{entry.booktitle}}</em>
-    {% endif %}
+    
     {% if entry.year %}
-      {{entry.year}}
+      {{entry.year}}.
     {% endif %}
+    
+    {% if entry.type == "article" %}
+      <em>{{entry.journal}},</em>
+    {% elsif entry.type == "inproceedings" %}
+      <em>In {{entry.booktitle}},</em>
+    {% endif %}
+    
+     {% if entry.volume %}
+      {{entry.volume}}
+    {% endif %}
+    
+     {% if entry.number %}
+      ({{entry.number}}),
+      {% else %}
+      ,
+    {% endif %}
+    
+      {% if entry.pages %}
+      {{entry.pages}}.
+    {% endif %}
+    
     </span>
   {% endif %}
 
@@ -56,10 +73,10 @@
     [<i href="{{ entry.html }}" target="_blank">HTML</i>]
   {% endif %}
   {% if entry.pdf %}
-    [<i href="{{ entry.pdf | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</i>]
+    [<a href="{{ entry.pdf | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>]
   {% endif %}
   {% if entry.presentation %}
-    [<i href="{{ entry.supp | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Presentation</i>]
+    [<a href="{{ entry.presentation | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Presentation</a>]
   {% endif %}
   {% if entry.poster %}
     [<i href="{{ entry.poster | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Poster</i>]
