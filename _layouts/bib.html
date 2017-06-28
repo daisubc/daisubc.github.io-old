@@ -66,9 +66,6 @@
   {% if entry.abstract %}
     [<a class="abstract">Abstract</a>]
   {% endif %}
-  {% if entry.doi %}
-    [<a class="doi">DOI</a>]
-  {% endif %}  
   {% if entry.arxiv %}
     [<i href="http://arxiv.org/abs/{{ entry.arxiv }}" target="_blank">arXiv</i>]
   {% endif %}
@@ -78,6 +75,9 @@
   {% if entry.pdf %}
     [<a href="{{ entry.pdf | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>]
   {% endif %}
+  {% if entry.doi %}
+    [<a href="https://doi.org/{{ entry.doi }}" target="_blank">DOI</a>]
+  {% endif %}    
   {% if entry.presentation %}
     [<a href="{{ entry.presentation | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Presentation</a>]
   {% endif %}
@@ -98,12 +98,5 @@
     <p>{{ entry.abstract }}</p>
   </span>
   {% endif %}
-
-  {% if entry.doi %}
-  <span class="doi hidden">
-    <p>{{ entry.doi }}</p>
-  </span>
-  {% endif %}
-
 
 </div>
