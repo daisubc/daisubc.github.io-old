@@ -5,6 +5,9 @@ $(document).ready(function() {
     $('a.bibtex').click(function() {
         $(this).parent().parent().find(".bibtex.hidden").toggleClass('open');
     });
+    $('a.doi').click(function() {
+        $(this).parent().parent().find(".doi.hidden").toggleClass('open');
+    });    
 });
 
 function collapseNavbar() {
