@@ -5,5 +5,27 @@
 
 .profile_img{
     max-height: 200px;
-    max-width: 100px;
+    max-width: 150px;
+}
+
+.member-title{
+	color: $theme-color;
+}
+
+.member-header{
+	float: left;
+	padding-right: 50px;
+}
+
+.member-content{
+	// float: right;
+}
+
+.members-publication ol li{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.members-publication ol li a{
+	color: $theme-color;
 }

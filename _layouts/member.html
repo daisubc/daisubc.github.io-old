@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<div class="post">
+
+  <div class="member-content">
+	  <div class="member-header">
+	  	<img class="profile_img" src="{{ page.img | prepend: site.baseurl | prepend: site.url }}" alt=""/>
+	    <h4 class="member-title"><b>{{ page.title }}</b></h4>
+	    <h5 class="member-description">{{ page.description }}</h5>
+	    <p>{{ page.email }}</p>
+		<h5>
+			<a href="https://www.linkedin.com/in/c-siang-lim-98535048" target="_blank">
+			<span class="fa-stack fa-2x">
+				<i class="fa fa-stack-2x fa-linkedin-square"></i>
+			</span>
+			</a> &nbsp;
+			<a href="http://www.siang.ca" target="_blank">
+				<span class="fa-stack fa-2x">
+				  <i class="fa fa-square fa-stack-2x"></i>
+				  <i class="fa fa-home fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+		</h5>    
+	  </div>
+  
+	  <h2> Biography </h2>
+	  <p class="member-biography">{{ page.biography }}</p>
+
+	  <h2> Project Description </h2>
+	  <p class="member-project">{{ page.project }}</p>
+
+	  {{ content }}
+
+  </div>
+
+
+</div>
