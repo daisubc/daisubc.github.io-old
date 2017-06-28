@@ -74,6 +74,7 @@
     display: block;
     padding-left: 10px;
     padding-right: 10px;
+    margin-right: 1.5em;
   }
 }
 
@@ -84,6 +85,11 @@
     position: absolute;
     right: 0;
     top: 0;
+    margin-right: 1.5em;
+    float: right;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;    
   }
   .topnav.responsive a {
     float: none;
@@ -100,7 +106,7 @@
     opacity: 0.75;
     width: 100%;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 10px;
     padding-bottom: $space-4;
     line-height: 3em;
     z-index: 25;
