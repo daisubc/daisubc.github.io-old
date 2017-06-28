@@ -2,7 +2,7 @@
 layout: page
 title: Kai Wong
 description: Kai Wong
-img: /assets/img/members/blank.png
+img: /assets/img/members/Kai_Wong.jpg
 program: PhD
 status: Current
 year_end: 

@@ -2,7 +2,7 @@
 layout: page
 title: David Kong
 description: David Kong
-img: /assets/img/members/blank.png
+img: /assets/img/members/David_Kong.jpg
 program: MSc
 status: Current
 year_end: 
