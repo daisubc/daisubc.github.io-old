@@ -1,17 +1,17 @@
 ---
 layout: page
-title: Members
+title: DAIS Lab Members
 permalink: /members/
 description: Current students and alumni.
 ---
 <link rel="stylesheet" href="{{ '/assets/css/members.css' | prepend: site.baseurl | prepend: site.url }}">
 
-<h3>
+<h4>
 <a class="btn fil-cat" data-rel="All">All</a> |
 <a class="btn fil-cat" data-rel="PhD">PhD</a> | 
 <a class="btn fil-cat" data-rel="MASc">MASc</a> |
 <a class="btn fil-cat" data-rel="BASc">BASc</a>
-</h3>
+</h4>
 
 <hr>
 <div id="members">
@@ -32,7 +32,7 @@ description: Current students and alumni.
 
 <br>
 <h1>Alumni</h1>
-<h3>
+<h4>
 <a class="btn fil-cat-alumni" data-rel="All">All</a> |
 <a class="btn fil-cat-alumni" data-rel="RA">RA</a> | 
 <a class="btn fil-cat-alumni" data-rel="PDF">PDF</a> | 
@@ -40,7 +40,7 @@ description: Current students and alumni.
 <a class="btn fil-cat-alumni" data-rel="MASc">MASc</a> |
 <a class="btn fil-cat-alumni" data-rel="MEng">MEng</a> |
 <a class="btn fil-cat-alumni" data-rel="BASc">BASc</a>
-</h3>
+</h4>
 <hr>
 
 <div id="alumni">

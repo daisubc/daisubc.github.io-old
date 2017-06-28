@@ -2,10 +2,10 @@
 
   <div class="wrapper">
 
-    <span class="site-title">
+    <a class="site-title" href="{{ site.baseurl | prepend: site.url }}/"> <i class="fa fa-cubes"></i>
         {% assign name = site.name | split: ' ' %}
         <strong>{{ name | first }}</strong> {{ name | last }}
-    </span>
+    </a>
 
     <nav class="site-nav">
 
