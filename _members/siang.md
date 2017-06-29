@@ -16,26 +16,12 @@ linkedin: https://www.linkedin.com/in/c-siang-lim-98535048
 homepage: http://www.siang.ca 
 ---
 
-<!-- Instructions: Create a .bib file (use lower case, no spaces) in the _bibliography folder with your name, and replace my name below with your name -->
+<!-- Instructions: 
+Create a .bib file (use lower case, no spaces) in the _bibliography folder with your name, and replace my name in the bibliography code below with your name 
+-->
 
 <hr>
 <h2> Publications and Presentations</h2>
 <div id="members-publication">
 	{% bibliography -f siang -q @*[]* %}
 </div>
-
-<!-- 
-<div class="members-publication">
-	<ol>
-		<li>
-			Presenter, <b>S. Lim</b> (2017, April). Modeling Cell Polarization and Intercalation During Fruit Fly Development. Oral and poster presentation at the <i>2017 AIChE Pacific Northwest Student Regional Conference</i>, Corvallis, OR.
-			<br>
-			<a href="http://siang.ca/docs/aiche17_lim.pdf" target="_blank">[Poster, 2nd Place Award]</a>
-		</li>
-		<li>
-			Presenter, <b>S. Lim</b> (2016, June). Modeling Cell Polarization and Intercalation During Drosophila Germband Extension. Podium presentation at the <i>Northwest Biomechanics Symposium 2016</i>, Vancouver, BC.
-			<br> 
-			<a href="http://siang.ca/docs/lim.pdf" target="_blank">[Abstract]</a>
-		</li>
-	</ol>
-</div> -->
