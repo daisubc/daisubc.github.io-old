@@ -4,6 +4,13 @@
 <div id="{{entry.key}}">
   {% if entry.type == "thesis" %}
     {{reference}}
+  {% elsif entry.type == "presentation" %}
+    Presenter,
+    {% for author in entry.author_array %}
+      <em>{{author.last}}, {{author.first}},</em>
+    {% endfor %}
+    {{entry.title}}. {{entry.year}}, {{entry.note}}
+
   {% else %}
     <span class="title">{{entry.title}}</span>
     <span class="author">
@@ -43,19 +50,21 @@
       <em>{{entry.journal}},</em>
     {% elsif entry.type == "inproceedings" %}
       <em>In {{entry.booktitle}},</em>
+    {% elsif entry.type == "unpublished" %}
+      <em>{{entry.note}}</em>      
     {% endif %}
     
-     {% if entry.volume %}
+    {% if entry.volume %}
       {{entry.volume}}
     {% endif %}
     
-     {% if entry.number %}
+    {% if entry.number %}
       ({{entry.number}}),
-      {% else %}
+    {% else %}
       ,
     {% endif %}
     
-      {% if entry.pages %}
+    {% if entry.pages %}
       {{entry.pages}}.
     {% endif %}
     
@@ -72,6 +81,9 @@
   {% if entry.html %}
     [<i href="{{ entry.html }}" target="_blank">HTML</i>]
   {% endif %}
+  {% if entry.link %}
+    [<a href="{{ entry.link }}" target="_blank">Link</a>]
+  {% endif %}  
   {% if entry.pdf %}
     [<a href="{{ entry.pdf | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>]
   {% endif %}
