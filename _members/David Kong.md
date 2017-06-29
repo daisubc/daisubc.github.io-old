@@ -3,7 +3,7 @@ layout: page
 title: David Kong
 description: David Kong
 img: /assets/img/members/David_Kong.jpg
-program: MSc
+program: MASc
 status: Current
 year_end: 
 year_start: 2016
