@@ -16,7 +16,7 @@ linkedin: https://www.linkedin.com/in/c-siang-lim-98535048
 homepage: http://www.siang.ca 
 ---
 
-<!-- Instructions: 
+<!-- Instructions:
 Create a .bib file (use lower case, no spaces) in the _bibliography folder with your name, and replace my name in the bibliography code below with your name 
 -->
 

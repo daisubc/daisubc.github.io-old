@@ -2,7 +2,7 @@
 layout: about
 permalink: /
 title: <strong>Data Analytics and Intelligent Systems</strong> Lab
-description: <strong>Paving the way for the next industrial revolution through data</strong>
+description: <b>Paving the way for the next industrial revolution through data</b>
 
 profile:
   align: right

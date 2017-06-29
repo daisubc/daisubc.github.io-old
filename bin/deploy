@@ -23,7 +23,7 @@ mv _site/* .
 rm -R _site/
 
 # Create CNAME
-echo "dais.chbe.ubc.ca" > CNAME
+# echo "dais.chbe.ubc.ca" > CNAME
 
 # Push to master.
 git add -fA
