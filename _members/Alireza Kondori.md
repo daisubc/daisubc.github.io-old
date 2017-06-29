@@ -2,7 +2,7 @@
 layout: page
 title: Alireza Kondori
 description: Alireza Kondori is working towards a MASc.
-img: /assets/img/members/hui.png
+img:
 program: MASc
 status: Current
 year_end:
