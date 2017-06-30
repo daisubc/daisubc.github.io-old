@@ -38,11 +38,11 @@ text:
     older: 'Older'
 
 # Comments
-disqus_shortname: al-folio # put your disqus shortname
+disqus_shortname: dais # put your disqus shortname
 
 # Optional features
 show_social_icons:  true
-enable_anchorjs:    false
+enable_anchorjs:    true
 enable_katex:       true
 
 # -----------------------------------------------------------------------------
