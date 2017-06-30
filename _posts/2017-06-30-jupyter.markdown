@@ -20,7 +20,7 @@ comments: true
 
 3. Once your Cloud account has been approved, you should receive an email and Compute Canada will provide access to either the [West](https://west.cloud.computecanada.ca){:target="_blank"} or the [East](https://east.cloud.computecanada.ca){:target="_blank"} cloud (but not both). 
 
-I spent some time trying to login to the East and West cloud with my CCDB account without applying for a Cloud account, which obviously didn't work. The need to register for a separate Cloud account wasn't very clear to me because the Compute Canada website had theregistration link and instructions hidden in the middle of their [Cloud service page](https://www.computecanada.ca/research-portal/national-services/compute-canada-cloud/). 
+I spent some time trying to login to the East and West cloud with my CCDB account without applying for a Cloud account, which obviously didn't work. The need to register for a separate Cloud account wasn't very clear to me because the Compute Canada website had the registration link and instructions hidden in the middle of their [Cloud service page](https://www.computecanada.ca/research-portal/national-services/compute-canada-cloud/). 
 
 ## Step 1 --- Setting up your Cloud instance
 Login to either the [West](https://west.cloud.computecanada.ca){:target="_blank"} or the [East](https://east.cloud.computecanada.ca){:target="_blank"} cloud. Once you're in, you should see a sidebar on the left with a section called **Compute**. We will set up 2 things there, a volume and an instance. 
@@ -28,7 +28,7 @@ Login to either the [West](https://west.cloud.computecanada.ca){:target="_blank"
 **Instances** are virtual machines and **volumes** are disk space that can be attached to instances. Data on instances are destroyed when you terminate an instance, but you can store persistent data on volumes. 
 
 ### Step 1.1 --- Security
-We first need to open up some ports to access the Jupyter Notebook server remotely. In the **Access & Security** tab, click on Manage Rules for the default security group. Click add rule and add **SSH**, **HTTP**, **HTTPS** and a **Custom TCP Rule** for Port 9999 with direction ingress.
+We first need to open up some ports to access the Jupyter Notebook server remotely. In the **Access & Security** tab, click on Manage Rules for the default security group. Click *Add Rule* and add **SSH**, **HTTP**, **HTTPS** and a **Custom TCP Rule** for Port 9999 with direction ingress.
 
 ### Step 1.2 --- Volume
 In the **Volumes** tab, click on the **Create Volume** button and fill up the name and description. Use **Image** as the Volume Source and **Ubuntu-16.04** as the image source. For the size, anything above **5 GiB** should be sufficient. Use nova for the availability zone.
