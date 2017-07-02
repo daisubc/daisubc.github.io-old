@@ -7,6 +7,11 @@ set -e
 
 echo "Started deploying"
 
+# Push changes to origin
+git add -fA
+git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
+git push -f -q origin master
+
 # Checkout master branch.
 if [ `git branch | grep master` ]
 then
