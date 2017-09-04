@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>DAIS Lab | Remote Tools</title>
+  <title>DAIS Lab | Using Sublime SFTP to Edit Remote Files</title>
   <meta name="description" content="We develop and apply machine learning and data analytics techniques with a particular interest in process industries.
 ">
 
@@ -84,9 +84,9 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Remote Tools</h1>
+    <h1 class="post-title">Using Sublime SFTP to Edit Remote Files</h1>
     <p class="post-meta">
-      June 29, 2017
+      September 3, 2017
       
         • <b><a class="post-author" href="http://localhost:4000/members/Siang Lim">Siang Lim</a></b>
       
@@ -99,215 +99,81 @@
     <img class="col three" src="/assets/img/blog/compute_canada/compute_canada_logo.png" />
 </div>
 
-<p><a href="https://www.computecanada.ca/">Compute Canada</a> provides the Canadian research community access to advanced computing resources. Jupyter Notebooks are a great way to create and share reproducible research. In this tutorial, we will show you how to set up a Jupyter Notebook server on the Compute Canada cloud system that you can access remotely.</p>
+<p>Command line-based text editors like vim and Emacs have a steep learning curve and even simple tasks like navigating around in the interface isn’t always straightforward for beginners. In this tutorial, we’ll show you how to edit files on a remote server like Compute Canada in an intuitive and easy manner using Sublime Text 3 and SFTP.</p>
 
-<h3 id="prerequisites">Prerequisites</h3>
+<h3 id="set-up">Set Up</h3>
 <ol>
   <li>
-    <p>You’ll need to apply for a Compute Canada Database <a href="https://www.computecanada.ca/research-portal/account-management/apply-for-an-account/" target="_blank">(CCDB) account</a> and get your PI to approve it.</p>
+    <p>First, download <a href="https://www.sublimetext.com/3" target="_blank">Sublime Text 3</a>.</p>
   </li>
   <li>
-    <p>Using your CCDB username, you’ll need to apply for a separate <a href="https://www.computecanada.ca/create-a-cloud-account/" target="_blank">Compute Canada Cloud account</a>.</p>
+    <p>Then install the <a href="https://packagecontrol.io/installation" target="_blank">Package Control plugin</a> using the instructions on the page.</p>
   </li>
   <li>
-    <p>Once your Cloud account has been approved, you should receive an email and Compute Canada will provide access to either the <a href="https://west.cloud.computecanada.ca" target="_blank">West</a> or the <a href="https://east.cloud.computecanada.ca" target="_blank">East</a> cloud (but not both).</p>
+    <p>Once Package Control is installed, restart Sublime Text then press <code class="highlighter-rouge">Ctrl+Shift+P</code> to open the Command Palette. Type Install and select <code class="highlighter-rouge">Package Control: Install Package</code>. Type in <code class="highlighter-rouge">SFTP</code> and press Enter to install the SFTP package.</p>
   </li>
 </ol>
 
-<p>I spent some time trying to login to the East and West cloud with my CCDB account without applying for a Cloud account, which obviously didn’t work. The need to register for a separate Cloud account wasn’t very clear to me because the Compute Canada website had the registration link and instructions hidden in the middle of their <a href="https://www.computecanada.ca/research-portal/national-services/compute-canada-cloud/">Cloud service page</a>.</p>
+<h2 id="select-your-folder">Select Your Folder</h2>
+<p>First, you’ll have to select and open a folder that you want to sync with the remote server. You can create a new folder if you’re starting from scratch, then go to <code class="highlighter-rouge">File &gt; Open Folder</code> in Sublime Text to open that folder. Right click on the folder that you’ve just selected and you should see a <code class="highlighter-rouge">SFTP/FTP</code> and <code class="highlighter-rouge">Map to Remote</code> option in the context menu.</p>
 
-<h2 id="step-1--setting-up-your-cloud-instance">Step 1 — Setting up your Cloud instance</h2>
-<p>Login to either the <a href="https://west.cloud.computecanada.ca" target="_blank">West</a> or the <a href="https://east.cloud.computecanada.ca" target="_blank">East</a> cloud. Once you’re in, you should see a sidebar on the left with a section called <strong>Compute</strong>. We will set up 2 things there, a volume and an instance.</p>
+<p>Clicking on <code class="highlighter-rouge">Map to Remote</code> creates a <code class="highlighter-rouge">sftp-config.json</code> file to save your settings which looks something like this:</p>
 
-<p><strong>Instances</strong> are virtual machines and <strong>volumes</strong> are disk space that can be attached to instances. Data on instances are destroyed when you terminate an instance, but you can store persistent data on volumes.</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+    <span class="c1">// The tab key will cycle through the settings when first created</span>
+    <span class="c1">// Visit http://wbond.net/sublime_packages/sftp/settings for help</span>
+    
+    <span class="c1">// sftp, ftp or ftps</span>
+    <span class="s2">"type"</span><span class="err">:</span> <span class="s2">"sftp"</span><span class="p">,</span>
 
-<h3 id="step-11--security">Step 1.1 — Security</h3>
-<p>We first need to open up some ports to access the Jupyter Notebook server remotely. In the <strong>Access &amp; Security</strong> tab, click on Manage Rules for the default security group. Click <em>Add Rule</em> and add <strong>SSH</strong>, <strong>HTTP</strong>, <strong>HTTPS</strong> and a <strong>Custom TCP Rule</strong> for Port 9999 with direction ingress.</p>
-
-<h3 id="step-12--volume">Step 1.2 — Volume</h3>
-<p>In the <strong>Volumes</strong> tab, click on the <strong>Create Volume</strong> button and fill up the name and description. Use <strong>Image</strong> as the Volume Source and <strong>Ubuntu-16.04</strong> as the image source. For the size, anything above <strong>5 GiB</strong> should be sufficient. Use nova for the availability zone.</p>
-
-<h3 id="step-13--instance">Step 1.3 — Instance</h3>
-<p>In the <strong>Instances</strong> tab, click on <strong>Launch Instance</strong>. Give it a name and use nova for the availability zone. In <strong>Instance Boot Source</strong> select Boot from volume, then choose the volume that you’ve just created.</p>
-
-<p>You can select the size of your new virtual machine as pre-defined <em>flavours</em>. You have 2 main choices, a <strong>p (persistent)</strong> flavour and a <strong>c (compute)</strong> flavour. Briefly, <strong>c</strong> flavours are intended for running shorter, intensive computations and for development and testing purposes while <strong>p</strong> flavours are meant for running longer computations. You can find more information in the <a href="https://docs.computecanada.ca/wiki/Virtual_machine_flavors" target="_blank">Compute Canada wiki</a>.</p>
-
-<p><em><strong>DO NOT CHECK</strong></em> the Delete Volume on Instance Delete box or you will lose your data when you terminate the instance.</p>
-
-<h3 id="step-14--creating-an-ssh-key-pair">Step 1.4 — Creating an SSH key pair</h3>
-
-<p>Under <strong>Access &amp; Security</strong>, select the <strong>default</strong> security group.</p>
-
-<p>Click on the <strong>+</strong> button in the <strong>Key Pair</strong> form to create a new key pair. We will follow the instructions in the new popup window to import a new key pair. Give your key pair a name first, i.e. <code class="highlighter-rouge">Dell Computer</code>.</p>
-
-<p>If you’re on Linux or Mac, open up your terminal (<code class="highlighter-rouge">Ctrl+Alt+T</code> for Ubuntu) the run the following commands:</p>
-
-<p>Use ssh-keygen to create a key pair named <code class="highlighter-rouge">canadacloud</code> (you can name it anything you like). It will ask you for a passphrase, just leave it blank if you want.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ssh-keygen -t rsa -f canadacloud
+    <span class="s2">"save_before_upload"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"upload_on_save"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"sync_down_on_open"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">"sync_skip_deletes"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">"sync_same_age"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"confirm_downloads"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">"confirm_sync"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"confirm_overwrite_newer"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
+    
+    <span class="s2">"host"</span><span class="err">:</span> <span class="s2">"206.167.180.231"</span><span class="p">,</span>
+    <span class="s2">"user"</span><span class="err">:</span> <span class="s2">"ubuntu"</span><span class="p">,</span>
+    <span class="s2">"port"</span><span class="err">:</span> <span class="s2">"22"</span><span class="p">,</span>
+    
+    <span class="s2">"remote_path"</span><span class="err">:</span> <span class="s2">"/home/ubuntu/wlr/"</span><span class="p">,</span>
+    <span class="s2">"ignore_regexes"</span><span class="err">:</span> <span class="p">[</span>
+        <span class="s2">"\\.sublime-(project|workspace)"</span><span class="p">,</span> <span class="s2">"sftp-config(-alt\\d?)?\\.json"</span><span class="p">,</span>
+        <span class="s2">"sftp-settings\\.json"</span><span class="p">,</span> <span class="s2">"/venv/"</span><span class="p">,</span> <span class="s2">"\\.svn/"</span><span class="p">,</span> <span class="s2">"\\.hg/"</span><span class="p">,</span> <span class="s2">"\\.git/"</span><span class="p">,</span>
+        <span class="s2">"\\.bzr"</span><span class="p">,</span> <span class="s2">"_darcs"</span><span class="p">,</span> <span class="s2">"CVS"</span><span class="p">,</span> <span class="s2">"\\.DS_Store"</span><span class="p">,</span> <span class="s2">"Thumbs\\.db"</span><span class="p">,</span> <span class="s2">"desktop\\.ini"</span>
+    <span class="p">],</span>
+    <span class="s2">"connect_timeout"</span><span class="err">:</span> <span class="mi">30</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
-<p>Grab and copy the public key using this command</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>cat canadacloud.pub
-</code></pre>
-</div>
+<h2 id="settings-configuration">Settings Configuration</h2>
+<p>There are several important parameters that you need to fill in for SFTP to work:</p>
 
-<p>Then paste the contents back in the popup window in the <strong>Public Key</strong> box then click the Import button.</p>
+<ul>
+  <li>host</li>
+  <li>user</li>
+  <li>port</li>
+  <li>remote_path</li>
+</ul>
 
-<p>Once your done, click <strong>launch</strong> and wait for your instance to boot up.</p>
+<p>If you’re following our Compute Canada Cloud tutorial, <code class="highlighter-rouge">host</code> is the floating IP adress that you get from the Compute Canada config page. <code class="highlighter-rouge">user</code> would be <strong>ubuntu</strong> and <code class="highlighter-rouge">port</code> is <strong>22</strong>. Otherwise, please use the settings for your server.</p>
 
-<h4 id="step-15--associating-a-floating-ip">Step 1.5 — Associating a Floating IP</h4>
-<p>To connect to our new instance, we need to assign a public IP to it. In the <strong>Access &amp; Security</strong> tab, select <strong>Floating IPs</strong> and click on <strong>Allocate IP to Project</strong>. Select the default pool and click on the Allocate IP button.</p>
+<p><code class="highlighter-rouge">remote_path</code> refers to the path on the remote server where the files will be synced. The path must exist on the server for this to work. For example, if you want to sync <code class="highlighter-rouge">/home/mycomputer/dais/</code> on your own computer to <code class="highlighter-rouge">/home/ubuntu/dais</code> on the remote server, you will need to first create the <code class="highlighter-rouge">dais</code> folder on the remote server. This is easy, just SSH into the server (as explained in the Compute Canada Cloud setup tutorial) and use <code class="highlighter-rouge">mkdir dais</code> to create a directory called <code class="highlighter-rouge">dais</code>.</p>
 
-<p>Click on the <strong>Associate</strong> button for the floating IP address and then select your instance in <strong>Port to be associated</strong>.</p>
+<p>I usually leave the other settings on their default value, except <code class="highlighter-rouge">upload_on_save</code>, which I set to <code class="highlighter-rouge">true</code>. Setting it to true will ask SFTP to automatically upload the file to the server everytime you save it on your computer.</p>
 
-<h2 id="step-2--installing-anaconda-and-jupyter">Step 2 — Installing Anaconda and Jupyter</h2>
+<h2 id="running-your-program">Running Your Program</h2>
+<p>My workflow is simple. I write my code in Sublime Text 3 and use SFTP to automatically sync it to the Compute Canada server whenever I save the file. I would then SSH into the server and then run my program from the terminal. For example, if I have a python file called <code class="highlighter-rouge">main.py</code>, I would edit and sync the file then SSH into the server and run <code class="highlighter-rouge">python main.py</code>.</p>
 
-<p>In your terminal, login to the instance with the following command, replacing <code class="highlighter-rouge">xxx.xxx.xxx.xxx</code> with your floating IP address and <code class="highlighter-rouge">computecanada</code> with your key name.</p>
+<h2 id="syncing-remote-files-to-your-computer">Syncing Remote Files To Your Computer</h2>
+<p>If you have a program that dumps some output on the server, you can (very conveniently) grab the files to your computer using the <code class="highlighter-rouge">Sync Remote to Local</code> command or <code class="highlighter-rouge">Download Folder</code> command. For example, if your results are dumped into a folder called <code class="highlighter-rouge">output</code>, simply right click on that folder in Sublime Text then select <code class="highlighter-rouge">Download Folder</code> to download the entire folder, or <code class="highlighter-rouge">Sync Remote to Local</code> to only grab files that you don’t have on your computer.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ssh -i computecanada ubuntu@xxx.xxx.xxx.xxx
-</code></pre>
-</div>
-
-<p>If you’re having trouble logging in, try restarting your instance using a soft (or hard) reboot from the dropdown menu in the Instances page.</p>
-
-<p>First, update your system with the following commands:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>
-sudo apt-get update
-sudo apt-get upgrade
-
-</code></pre>
-</div>
-
-<p>Once that’s done, download and install <a href="https://www.continuum.io/downloads">Anaconda</a>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>
-wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
-bash Anaconda3-4.4.0-Linux-x86_64.sh 
-
-</code></pre>
-</div>
-
-<h2 id="step-3--configuring-jupyter-notebook">Step 3 — Configuring Jupyter Notebook</h2>
-
-<p>Once Anaconda is installed, you should be able to launch Jupyter with this command:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>jupyter notebook
-</code></pre>
-</div>
-
-<p>Press <code class="highlighter-rouge">Ctrl+C</code> to close the server.</p>
-
-<p>We will follow the instructions <a href="http://jupyter-notebook.readthedocs.io/en/latest/public_server.html">here</a> to set up Jupyter as a public server and secure it with HTTPS and a password.</p>
-
-<h3 id="step-31--generate-a-jupyter-configuration-file">Step 3.1 — Generate a Jupyter configuration file</h3>
-
-<p>First, create a configuration file</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>jupyter notebook --generate-config
-</code></pre>
-</div>
-
-<p>and generate a hashed password</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>jupyter notebook password
-</code></pre>
-</div>
-
-<h3 id="step-32--create-an-ssl-certificate">Step 3.2 — Create an SSL certificate</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mykey.key -out mycert.pem
-</code></pre>
-</div>
-
-<h3 id="step-33--edit-the-configuration-file">Step 3.3 — Edit the configuration file</h3>
-
-<p>First copy your hashed password (the string starting with sha1) with the following command and save it somewhere safe:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>cat ~/.jupyter/jupyter_notebook_config.json
-</code></pre>
-</div>
-
-<p>Open the Jupyter config file in <code class="highlighter-rouge">nano</code>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>nano ~/.jupyter/jupyter_notebook_config.py
-</code></pre>
-</div>
-
-<p>Then add the following lines to the top of the file. Replace YourPassword with the password that you copied.</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>
-c.NotebookApp.certfile = u'/home/ubuntu/mycert.pem'
-c.NotebookApp.keyfile = u'/home/ubuntu/mykey.key'
-c.NotebookApp.ip = '*'
-c.NotebookApp.password = u'YourPassword'
-c.NotebookApp.open_browser = False
-c.NotebookApp.port = 9999
-
-</code></pre>
-</div>
-
-<p>To close and save the file, press <code class="highlighter-rouge">Ctrl+X</code> and select Yes.</p>
-
-<h2 id="step-4--testing-your-new-notebook">Step 4 — Testing your new Notebook</h2>
-
-<p>Start the Jupyter notebook:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>jupyter notebook
-</code></pre>
-</div>
-
-<p>Point your browser to the following address, replace xxx.xxx.xxx.xxx with your floating IP:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>https://xxx.xxx.xxx.xxx:9999/
-</code></pre>
-</div>
-
-<p>If everything works, you should see a login screen and you will be able to enter your password and login to your Notebook!</p>
-
-<h2 id="step-5--persistent-notebooks">Step 5 — Persistent Notebooks</h2>
-
-<p>Closing your SSH connection will close the notebook server.</p>
-
-<p>To create a persistent notebook, we will use the <a href="https://www.gnu.org/software/screen/">screen</a> terminal multiplexer. First, close the server with <code class="highlighter-rouge">Ctrl+C</code> then run:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>screen
-</code></pre>
-</div>
-
-<p>Then in the new window, run the Jupyter notebook:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>jupyter notebook
-</code></pre>
-</div>
-
-<p>Now if you close the terminal, the Notebook server will still be running.</p>
-
-<h2 id="step-6--conclusion">Step 6 — Conclusion</h2>
-
-<p>Congratulations, you should now have a Jupyter Notebook running on the Compute Canada Cloud that you can access remotely. For a quick tour on using Jupyter notebooks, visit <a href="https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook">this link</a>.</p>
-
-<h3 id="notes">Notes</h3>
-
-<p>If you get an SSL security error in your browser, it’s because you’re using a self-signed certificate. To get rid of the error, you’ll need to use a custom domain and use a <strong>Let’s Encrypt</strong> certificate instead of a self-signed certificate:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>
-sudo add-apt-repository ppa:certbot/certbot
-sudo apt-get update
-sudo apt-get install certbot
-sudo certbot certonly --standalone -d your.domain.name
-
-</code></pre>
-</div>
-
-<p>Then replace the certificate and key in your Jupyter configuration file with the Let’s Encrypt certificates</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>
-c.NotebookApp.certfile = u'/etc/letsencrypt/live/your.domain.name/fullchain.pem'
-c.NotebookApp.keyfile = u'/etc/letsencrypt/live/your.domain.name/privkey.pem'
-
-</code></pre>
-</div>
+<h2 id="final-notes">Final Notes</h2>
+<p>To save yourself some time and mouse clicks, check out the SFTP page and learn the shortcuts for uploading/downloading files: https://wbond.net/sublime_packages/sftp/usage</p>
 
   </article>
 
@@ -316,7 +182,7 @@ c.NotebookApp.keyfile = u'/etc/letsencrypt/live/your.domain.name/privkey.pem'
     <script type="text/javascript">
       var disqus_shortname  = 'dais';
       var disqus_identifier = '/blog/2017/tools';
-      var disqus_title      = "Remote Tools";
+      var disqus_title      = "Using Sublime SFTP to Edit Remote Files";
       (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
