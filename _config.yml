@@ -57,6 +57,9 @@ collections:
   members:
     output: true
     permalink: /members/:path/
+  presentations:
+    output: true
+    permalink: /presentations/:path/
 
 news_limit: 5
 
