@@ -4,8 +4,8 @@ title: Siang Lim
 description: NSERC USRA Research Student
 img: /assets/img/members/siang.png
 program: BASc
-status: Current
-year_end: 
+status: Alumni
+year_end: 2017
 year_start: 2017
 email: siang [at] alumni.ubc.ca
 biography: >

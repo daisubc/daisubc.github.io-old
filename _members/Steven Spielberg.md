@@ -4,8 +4,8 @@ title: Steven Spielberg
 description: Steven Spielberg
 img: /assets/img/members/steven.jpg
 program: MASc
-status: Current
-year_end:
+status: Alumni
+year_end: 2017
 year_start: 2015
 ---
 

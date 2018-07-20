@@ -4,7 +4,7 @@ title: David Zamar
 description: David Zamar
 img: /assets/img/members/david.jpg
 program: PhD
-status: Current
+status: Alumni
 year_end: 
 year_start: 2013
 ---
