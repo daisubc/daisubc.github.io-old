@@ -1,4 +1,55 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2019
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{2019J1_Tian_CEP,
+  title={An economic model predictive control framework for mechanical pulping processes},
+  author={Tian, H. and Lu, Q. and Gopaluni, R.B. and Zavala, V.M. and Olson, J.A.},
+  journal={Control Engineering Practice},
+  volume={85},
+  pages={100-109},
+  year={2019},
+  publisher={Elsevier},
+  %code={#!},
+  pdf={2019J1_Tian_CEP.pdf},
+  %presentation={#},
+  abstract={We develop a multi-objective economic model predictive control (m-econ MPC) framework to control and optimize a nonlinear mechanical pulping (MP) process. M-econ MPC interprets economic MPC as a multi-objective optimization problem that trades off economic and set-point tracking performance. This interpretation allows us to construct a stabilizing constraint that guarantees closed-loop stability. The framework infers unmeasured states of the MP process (associated with product consistency) by using a moving horizon estimator (MHE). The MP process dynamics are described by using a nonlinear Wiener model. Examples from a two-stage high-consistency MP process are employed to demonstrate that significant improvements in economic performance are achievable.},
+  doi={10.1016/j.conengprac.2019.01.008}  
+}
+
+@article{2019J1_Wang_IEEEII,
+  title={Deep Learning of Complex Batch Process Data and Its Application on Quality Prediction},
+  author={Wang, K. and Gopaluni, R.B. and Chen, J. and Song, Z.},
+  journal={IEEE Transactions on Industrial Informatics},
+  volume={To Appear},
+  pages={},
+  year={2019},
+  publisher={Elsevier},
+  %code={#!},
+  pdf={2019J2_Wang_IEEEII.pdf},
+  %presentation={#},
+  abstract={Batch process quality prediction is an important application in the chemical industry. The complexity of batch processes is characterized by multiphase, nonlinearity, dynamics and uneven durations, so modeling of batch processes is very difficult. Moreover, there are other challenges in quality prediction. As the process trajectories over the whole running duration make contributions to the final targets, the prediction issue embraces tremendously high-dimensional inputs but very low-dimensional outputs. That is, the prediction suffers from a severe dimensional imbalance between inputs and outputs. To conquer these difficulties, this paper proposes a new deep learning-based framework for complex features and quality prediction. The long short-term memory is used to extract quality-relevant hidden features from a long-time sequence in each phase, significantly reducing the predictor dimensions. And these features from different phases are further integrated and compressed by a stacked auto-encoder. A practical industrial example testifies to the efficacy of the proposed framework.},
+  doi={10.1109/TII.2018.2880968}  
+}
+
+@article{2019J3_Lu_Automatica,
+  title={Identification of Symmetric Noncausal Processes},
+  author={Lu, Q. and Loewen, P.D. and Gopaluni, R.B. and Forbes, M.G. and Backstrom, J.U. and Dumont, G.A. and Davies, M.S.},
+  journal={Automatica},
+  volume={To Appear},
+  pages={},
+  year={2019},
+  publisher={Elsevier},
+  %code={#!},
+  pdf={2019J3_Lu_Automatica.pdf},
+  %presentation={#},
+  abstract={We propose a maximum likelihood estimation approach for the identification of symmetric noncausal models. Such models are used to represent the cross-directional dynamic response of many industrial processes that are generally modeled with a high- dimensional gain matrix. Reducing the number of parameters in a noncausal model can significantly reduce the uncertainty associated with parameter estimates. We adapt the maximum likelihood method to treat symmetric noncausal models by showing that every symmetric noncausal process admits a spectrally equivalent causal model. It is then proved that the maximum likelihood estimate of this causal model converges to that of the original noncausal model. We present an iterative identification algorithm to efficiently estimate the parameters in noncausal models. Finally, we show that the parameter covariance estimate obtained from the causal model also converges to that of the noncausal model, which lays a foundation for optimal input design in noncausal processes. Several numerical examples illustrate the effectiveness of the proposed algorithm.},
+  %doi={}  
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %2018
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -46,9 +97,10 @@
   doi={10.1016/j.compchemeng.2018.04.007}
 }
 
+
 @article{Lu2018CVA,
   title={Locality Preserving Discriminative Canonical Variate Analysis for Fault Diagnosis},
-  author={Lu, Q. and Jiang, B. and Gopaluni, R.B. and Loewen, P.D. and Braatz, R.},
+  author={Lu, Q. and Jiang, B. and Gopaluni, R.B. and Loewen, P.D. and Braatz, R.D.},
   journal={Computers \& Chemical Engineering},
   volume={117},
   pages={309-319},
@@ -59,6 +111,21 @@
   %presentation={#},
   abstract={This paper proposes a locality preserving discriminative canonical variate analysis (LP-DCVA) scheme for fault diagnosis. The LP-DCVA method provides a set of optimal projection vectors that simultaneously maximizes the within-class mutual canonical correlations, minimizes the between-class mutual canonical correlations, and preserves the local structures present in the data. This method inherits the strength of canonical variate analysis (CVA) in handling high-dimensional data with serial correlations and the advantages of Fisher discriminant analysis (FDA) in pattern classification. Moreover, the incorporation of locality preserving projection (LPP) in this method makes it suitable for dealing with nonlinearities in the form of local manifolds in the data. The solution to the proposed approach is formulated as a generalized eigenvalue problem. The effectiveness of the proposed approach for fault classification is verified by the Tennessee Eastman process. Simulation results show that the LP-DCVA method outperforms the FDA, dynamic FDA (DFDA), CVA-FDA, and localized DFDA (L-DFDA) approaches in fault diagnosis.},
   doi={10.1016/j.compchemeng.2018.06.017}
+}
+
+@article{2018J5_Lu_JPC,
+  title={Sparse canonical variate analysis approach for process monitoring},
+  author={Lu, Q. and Jiang, B. and Gopaluni, R.B. and Loewen, P.D. and Braatz, R.D.},
+  journal={Journal of Process Control},
+  volume={71},
+  pages={90-102},
+  year={2018},
+  publisher={},
+  %code={#!},
+  pdf={2018J5_Lu_JPC.pdf},
+  %presentation={#},
+  abstract={Canonical variate analysis (CVA) has shown its superior performance in statistical process monitoring due to its effectiveness in handling high-dimensional, serially, and cross-correlated dynamic data. A restrictive condition for CVA is that the covariance matrices of dependent and independent variables must be invertible, which may not hold when collinearity between process variables exists or the sample size is small relative to the number of variables. Moreover, CVA often yields dense canonical vectors that impede the interpretation of underlying relationships between the process variables. This article employs a sparse CVA (SCVA) technique to resolve these issues and applies the method to process monitoring. A detailed algorithm for implementing SCVA and its formulation in fault detection and identification are provided. SCVA is shown to facilitate the discovery of major structures (or relationships) among process variables, and assist in fault identification by aggregating the contributions from faulty variables and suppressing the contributions from normal variables. The effectiveness of the proposed approach is demonstrated on the Tennessee Eastman process.},
+  doi={10.1016/j.jprocont.2018.09.009}
 }
 
 @inproceedings{2018C1_Tsai_ADCHEM,
